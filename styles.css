@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.canvas {
+    border: none;
+    width: 80%;
+    max-width: 800px;
+    aspect-ratio: auto 1 / 1;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    align-content: start;
+    row-gap: 0px;
+}
