@@ -1,4 +1,5 @@
 const canvas = document.querySelector('.canvas');
+const buttonCreateGrid = document.querySelector('#button-create-grid');
 
 function createGrid(gridSize) { 
     let squareSideSize = 100 / gridSize;
@@ -12,9 +13,9 @@ function createGrid(gridSize) {
         gridSquare.style.boxSizing = 'border-box';
         gridSquare.style.border = '1px black solid';
         gridSquare.style.flex = 'initial';
-        /*gridSquare.addEventListener('hover', () => {
+        gridSquare.addEventListener('mouseover', () => {
             gridSquare.style.backgroundColor = 'black';
-        });*/
+        });
         canvas.appendChild(gridSquare);
     }
 }
@@ -25,4 +26,18 @@ function reset() {
     }
 }
 
+function selectGridSize() {
+    let gridSizeChoice = prompt("Select a grid size between 1 - 100:");
+    if (gridSizeChoice > 100) {
+        alert("Grid size too big, please select a number between.");
+    } else if (gridSizeChoice <= 0) {
+        alert("Grid Grid size too small, please select a number between.")
+    } else {
+        createGrid(gridSizeChoice);
+    }
+}
+
 createGrid(1);
+
+buttonCreateGrid.addEventListener('click', selectGridSize);
+
