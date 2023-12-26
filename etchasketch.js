@@ -1,6 +1,17 @@
 const canvas = document.querySelector('.canvas');
 const buttonCreateGrid = document.querySelector('#button-create-grid');
 
+function getRandomColor() {
+    return Math.floor(Math.random()*16777215).toString(16);
+}
+
+function colorTransform() {
+    let transformingSquare = false;
+    //Each square, when hovered, is assigned a color transform = true value
+    //Each square, when hovered, is assigned a color delta value = difference from black/10
+    //Each time a new square is hovered, every square in the grid is added the delta value
+}
+
 function createGrid(gridSize) { 
     let squareSideSize = 100 / gridSize;
     if (canvas.hasChildNodes) {
@@ -14,7 +25,7 @@ function createGrid(gridSize) {
         gridSquare.style.border = '1px black solid';
         gridSquare.style.flex = 'initial';
         gridSquare.addEventListener('mouseover', () => {
-            gridSquare.style.backgroundColor = 'black';
+            gridSquare.style.backgroundColor = '#' + getRandomColor();
         });
         canvas.appendChild(gridSquare);
     }
